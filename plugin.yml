@@ -1,0 +1,26 @@
+#========================================Clear Chat Automatically===============================
+#   ██████╗██╗  ██╗ █████╗ ████████╗   ██████╗██╗     ███████╗ █████╗ ███╗   ██╗███████╗██████╗
+#  ██╔════╝██║  ██║██╔══██╗╚══██╔══╝  ██╔════╝██║     ██╔════╝██╔══██╗████╗  ██║██╔════╝██╔══██╗
+#  ██║     ███████║███████║   ██║     ██║     ██║     █████╗  ███████║██╔██╗ ██║█████╗  ██████╔╝
+#  ██║     ██╔══██║██╔══██║   ██║     ██║     ██║     ██╔══╝  ██╔══██║██║╚██╗██║██╔══╝  ██╔══██╗
+#  ╚██████╗██║  ██║██║  ██║   ██║     ╚██████╗███████╗███████╗██║  ██║██║ ╚████║███████╗██║  ██║
+#  ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝      ╚═════╝╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝
+#  ===============================================================================================
+#  * This is free software: You can redistribute it and/or modify!
+#  * This file is licensed under the  GNU Affero General Public License.(C)2020 GodWeedZao
+name: AutoClearChat
+main: GodWeedZao\ChatCleaner\Cleaner
+version: 1.0.0
+api: 3.0.0
+author: GodWeedZao
+description: Clear Your Server Chat Easily
+#Commands
+commands:
+ cc:
+  description: "easy chat cleaner"
+  permission: gw.clear.chat
+#Permissions
+permissions:
+ gw.clear.chat:
+  default: op
+  description: "Allow Player To Use Clear Chat UI"
