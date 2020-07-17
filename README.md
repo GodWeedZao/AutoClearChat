@@ -6,12 +6,12 @@
 <li>Put phar from Poggit into <code>plugins</code> folder</li>
 <li>Edit the config.yml file of plugin in <code>plugin_data/AutoClearChat</code></li>
 <li>you can set <code>Auto-Clean: false</code> to does'nt Clear Chat Automatically! </li>
-  <li>You Can Clear chat Handly with Command:</li><br><p>  /cc</p>
+  <li>You Can Clear chat Handly with Command:</li>
 <ul>
-<li>Choose whitelist or blacklist mode</li>
-<li>Select the commands to whitelist/blacklist</li>
+<li>/cc</li>
+<li>#Permission: gw.clear.chat</li>
+<li>#Default: Op</li>
 </ul>
 </li>
 </ol>
-<p>The permission <code>hidecommands.unhide</code> allows players to see hidden commands again.
-It has been set to <code>default: false</code>, which means you need to explicitly give it to a player or group using a permission manager like<p>
+<p>Ihope you enjoy for using this plugin!<p>
