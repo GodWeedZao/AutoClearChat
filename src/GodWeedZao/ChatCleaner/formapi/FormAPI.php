@@ -5,8 +5,8 @@ namespace GodWeedZao\ChatCleaner\formapi;
 class FormAPI {
 	
 	public function createCustomForm(callable $function = null) : CustomForm {
-    	$form = new CustomForm($function);
-    	return $form;
+        $form = new CustomForm($function);
+        return $form;
 	}
 	
 	public function createSimpleForm(callable $function = null) : SimpleForm {
