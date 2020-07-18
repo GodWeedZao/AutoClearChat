@@ -35,10 +35,10 @@ class Cleaner extends PluginBase implements Listener {
     {
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         @mkdir($this->getDataFolder());
-        $this->cfg = $this->getConfig();
+        $Config = $this->getConfig();
         $this->saveDefaultConfig();
-        if ($this->cfg->get("Auto-Clean") === true) {
-            $this->getScheduler()->scheduleRepeatingTask(new UpdateTask($this), $this->cfg->get("Timer"));
+        if ($Config->get("Auto-Clean") === true) {
+            $this->getScheduler()->scheduleRepeatingTask(new UpdateTask($this), $Config->get("Timer"));
         }
     }
 
