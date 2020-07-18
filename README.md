@@ -25,13 +25,10 @@
 </li>
 </ol>
 <p>I hope you enjoy using this plugin!<p>
-<h2>Libraries I used</h2>
+<h2>[Libraries]</h2>
+<il>
 <ul>
 <li><a href="https://github.com/jojoe77777/FormAPI/">FormAPI</a></li>
-</ul>
-<li>/cc</li>
-<li>#Permission: gw.clear.chat</li>
-<li>#Default: Op</li>
 </ul>
 </li>
 </ol>
