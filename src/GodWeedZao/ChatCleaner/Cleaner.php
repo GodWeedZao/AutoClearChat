@@ -66,7 +66,8 @@ class Cleaner extends PluginBase implements Listener {
 	    if ($this->cfg->get("Auto-Clean") === true) {
 	        return $this->getServer()->broadcastmessage(self::$resetChat . self::$Reason . "   " . "§c!§5-§d=§5(§4C§chat §aWas Cleared Automatically§5)§d=§5-§c!");
         } else {
-            $this->getLogger()->info(self::$chat . GW::RED . "Auto Clear Chat Is False!");
+           // $this->getLogger()->info(self::$chat . GW::RED . "Auto Clear Chat Is False!");
+		    #if you dont want to get notice when it is false. 
 	        return false;
         }
     }
