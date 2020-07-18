@@ -2,7 +2,7 @@
 
 /**
 ========================================Clear Chat Automatically===============================
-██████╗██╗  ██╗ █████╗ ████████╗   ██████╗██╗     ███████╗ █████╗ ███╗   ██╗███████╗██████╗
+ ██████╗██╗  ██╗ █████╗ ████████╗   ██████╗██╗     ███████╗ █████╗ ███╗   ██╗███████╗██████╗
 ██╔════╝██║  ██║██╔══██╗╚══██╔══╝  ██╔════╝██║     ██╔════╝██╔══██╗████╗  ██║██╔════╝██╔══██╗
 ██║     ███████║███████║   ██║     ██║     ██║     █████╗  ███████║██╔██╗ ██║█████╗  ██████╔╝
 ██║     ██╔══██║██╔══██║   ██║     ██║     ██║     ██╔══╝  ██╔══██║██║╚██╗██║██╔══╝  ██╔══██╗
@@ -17,16 +17,19 @@ namespace GodWeedZao\ChatCleaner;
 
 use pocketmine\scheduler\Task;
 
-class UpdateTask extends Task {
-	
-	private $plugin;
-	
-	public function __construct(Cleaner $plugin) {
-		$this->plugin = $plugin;
-	}
-	
-	public function onRun(int $tick) {
-		$this->plugin->AutoCleaner();
-	}
-	
+class UpdateTask extends Task
+{
+
+    private $plugin;
+
+    public function __construct(Cleaner $plugin)
+    {
+        $this->plugin = $plugin;
+    }
+
+    public function onRun(int $tick)
+    {
+            $this->plugin->AutoCleaner();
+    }
+
 }
