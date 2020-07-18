@@ -16,6 +16,8 @@
 <li>/cc</li>
 <li>#Permission: gw.clear.chat</li>
 <li>#Default: Op</li>
+  <li># Libraries I used</li>
+- [FormAPI](https://github.com/jojoe77777/FormAPI/)
 </ul>
 </li>
 </ol>
