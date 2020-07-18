@@ -10,8 +10,6 @@
 <li>Edit the config.yml file of plugin in <code>plugin_data/AutoClearChat</code></li>
 <li>you can set <code>Auto-Clean: false</code> to doesn't Clear Chat Automatically! </li>
   <li>You Can Clear chat Handly with Command:</li>
-<li>you can set <code>Auto-Clean: false</code> to does'nt Clear Chat Automatically! </li>
-<li>You Can Clear chat Handly with Command:</li>
 <ul>
 <li>/cc
   <ul>
