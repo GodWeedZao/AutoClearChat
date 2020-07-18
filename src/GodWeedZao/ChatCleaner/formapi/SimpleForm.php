@@ -15,10 +15,9 @@ class SimpleForm extends Form {
 	
 	private $labelMap = [];
 
-	/**
-	 * @param int $id
-	 * @param callable $callable
-	 */
+    /**
+     * @param callable $callable
+     */
 	public function __construct(?callable $callable) {
 		parent::__construct($callable);
 		$this->data["type"] = "form";
