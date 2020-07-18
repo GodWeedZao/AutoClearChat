@@ -15,14 +15,14 @@ declare(strict_types=1);
 
 namespace GodWeedZao\ChatCleaner;
 
+use GodWeedZao\ChatCleaner\formapi\FormAPI;
+use GodWeedZao\ChatCleaner\UpdateTask;
+use pocketmine\command\Command;
+use pocketmine\command\CommandSender;
 use pocketmine\event\Listener;
 use pocketmine\Player;
 use pocketmine\plugin\PluginBase;
-use pocketmine\command\CommandSender;
-use pocketmine\command\Command;
 use pocketmine\utils\TextFormat as GW;
-use GodWeedZao\ChatCleaner\formapi\FormAPI;
-use GodWeedZao\ChatCleaner\UpdateTask;
 
 class Cleaner extends PluginBase implements Listener {
 
@@ -31,22 +31,24 @@ class Cleaner extends PluginBase implements Listener {
     private static $resetChat = " \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n";
     private static $Reason = "§a-§2=§a-§2=§a-§2=§a-§2=§a-§2=§a-§2=§a] §4C§chat§4C§cleaner §a[§2=§a-§2=§a-§2=§a-§2=§a-§2=§a-§2=§a-" . "\n";
 
-	public function onEnable() : void{
+    public function onEnable(): void
+    {
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         @mkdir($this->getDataFolder());
         $this->cfg = $this->getConfig();
         $this->saveDefaultConfig();
         $this->getScheduler()->scheduleRepeatingTask(new UpdateTask($this), $this->cfg->get("Timer"));
-	}
+    }
 
     /**
      * @param Player $player
      */
 
-    public function openCCForm(Player $player){
+    public function openCCForm(Player $player)
+    {
         $form = (new FormAPI())->createCustomForm(function (Player $player, $data = null) {
             $res = $data;
-            if($res === null) {
+            if ($res === null) {
                 return true;
             }
             $ReasonMenu = ["Organize", "Advertising", "Improper words"];
@@ -59,16 +61,9 @@ class Cleaner extends PluginBase implements Listener {
         $form->sendToPlayer($player);
     }
 
-    /**
-     * @return bool
-     */
-    public function AutoCleaner() {
-	    if ($this->cfg->get("Auto-Clean") === true) {
-	        $this->getServer()->broadcastmessage(self::$resetChat . self::$Reason . "   " . "§c!§5-§d=§5(§4C§chat §aWas Cleared Automatically§5)§d=§5-§c!");
-        } else {
-           // $this->getLogger()->info(self::$chat . GW::RED . "Auto Clear Chat Is False!");
-		    #if you dont want to get notice when it is false.
-        }
+    public function AutoCleaner()
+    {
+        $this->getServer()->broadcastmessage(self::$resetChat . self::$Reason . "   " . "§c!§5-§d=§5(§4C§chat §aWas Cleared Automatically§5)§d=§5-§c!");
     }
 
     /**
@@ -78,21 +73,22 @@ class Cleaner extends PluginBase implements Listener {
      * @param array $args
      * @return bool
      */
-	public function onCommand(CommandSender $player, Command $command, string $label, array $args) : bool{
-		switch($command->getName()){
-			case "cc":
-			    if (!$player instanceof Player) {
-			        $player->sendMessage(self::$chat . GW::RED . "Please Use This Command In Game.");
-			        return true;
+    public function onCommand(CommandSender $player, Command $command, string $label, array $args): bool
+    {
+        switch ($command->getName()) {
+            case "cc":
+                if (!$player instanceof Player) {
+                    $player->sendMessage(self::$chat . GW::RED . "Please Use This Command In Game.");
+                    return true;
                 }
-				    if ((!$player->hasPermission("gw.clear.chat"))) {
-				        $player->sendMessage(self::$chat . GW::RED . "You Dont Have Permission To Use This Command.");
-                    } else {
-                        $this->openCCForm($player);
-                    }
-				return true;
-			default:
-				return false;
-		}
-	}
+                if ((!$player->hasPermission("gw.clear.chat"))) {
+                    $player->sendMessage(self::$chat . GW::RED . "You Dont Have Permission To Use This Command.");
+                } else {
+                    $this->openCCForm($player);
+                }
+                return true;
+            default:
+                return false;
+        }
+    }
 }
