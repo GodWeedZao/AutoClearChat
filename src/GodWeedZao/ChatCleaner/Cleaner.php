@@ -37,7 +37,6 @@ class Cleaner extends PluginBase implements Listener {
         $this->cfg = $this->getConfig();
         $this->saveDefaultConfig();
         $this->getScheduler()->scheduleRepeatingTask(new UpdateTask($this), $this->cfg->get("Timer"));
-		$this->getLogger()->info(self::$chat . GW::GREEN . "Plugin Enabled");
 	}
 
     /**
@@ -95,9 +94,5 @@ class Cleaner extends PluginBase implements Listener {
 			default:
 				return false;
 		}
-	}
-
-	public function onDisable() : void{
-		$this->getLogger()->info(self::$chat . GW::DARK_RED . "Plugin Disabled");
 	}
 }
