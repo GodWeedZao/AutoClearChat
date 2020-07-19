@@ -10,6 +10,10 @@
 #  * This is free software: You can redistribute it and/or modify!
 #  * This file is licensed under the  GNU Affero General Public License.(C)2020 GodWeedZao
 
+#sendMessage when chat Cleared by Person (Handly) (if you set this to false, when chat Cleared (Handly), Does not sendMessage).
+Send-Cleared-Message-Handly: true
+#sendMessage when chat Cleared by Server (Automatically) (if you set this to false, when chat Cleared (Automatically), Does not sendMessage).
+Send-Cleared-Message-Automatically: true
 #set Clear Chat Automatically (if you set this to false, chat does not clear Automatically!)
 Auto-Clean: true
 #the timer for clear chat if you set Auto-Clean to true.
