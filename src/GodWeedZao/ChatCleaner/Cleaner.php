@@ -55,8 +55,12 @@ class Cleaner extends PluginBase implements Listener {
             }
             $ReasonMenu = ["Organize", "Advertising", "Improper words"];
             $Reason = $ReasonMenu[$data[1]];
-            $this->getServer()->broadcastmessage(self::$resetChat . self::$Reason . "              " . "§c!§5-§d=§5(§4C§chat §aWas Cleared§5)§d=§5-§c!\n" . "              §2Cleared By: §3" . $player->getName() . "\n              " . "§l§2Reason: §b" . $Reason . "\n§a-§2=§a-§2=§a-§2=§a-§2=§a-§2=§a-§2=§a-§2=§a-§2=§a-§2=§a-§2=§a-§2=§a-§2=§a-§2=§a-§2=§a-§2=§a-§2=§a-");
-        });
+            $this->getServer()->broadcastmessage(self::$resetChat);
+            $Config = $this->getConfig();
+            if ($Config->get("Send-Cleared-Message-Handly") === true) {
+                $this->getServer()->broadcastmessage(self::$Reason . "              " . "§c!§5-§d=§5(§4C§chat §aWas Cleared§5)§d=§5-§c!\n" . "              §2Cleared By: §3" . $player->getName() . "\n              " . "§l§2Reason: §b" . $Reason . "\n§a-§2=§a-§2=§a-§2=§a-§2=§a-§2=§a-§2=§a-§2=§a-§2=§a-§2=§a-§2=§a-§2=§a-§2=§a-§2=§a-§2=§a-§2=§a-§2=§a-");
+            }
+});
         $form->setTitle("§l§4C§chat§4C§cleaner");
         $form->addLabel("§6Choose Your §bReason§6 For ClearChat.\n§6It'll Showing To Other Players!");
         $form->addDropdown("Choose Your Reason", self::$ReasonMenu);
@@ -65,7 +69,11 @@ class Cleaner extends PluginBase implements Listener {
 
     public function AutoCleaner()
     {
-        $this->getServer()->broadcastmessage(self::$resetChat . self::$Reason . "   " . "§c!§5-§d=§5(§4C§chat §aWas Cleared Automatically§5)§d=§5-§c!");
+        $Config = $this->getConfig();
+        $this->getServer()->broadcastmessage(self::$resetChat);
+        if ($Config->get("Send-Cleared-Message-Automatically") === true) {
+            $this->getServer()->broadcastmessage(self::$Reason . "   " . "§c!§5-§d=§5(§4C§chat §aWas Cleared Automatically§5)§d=§5-§c!");
+        }
     }
 
     /**
