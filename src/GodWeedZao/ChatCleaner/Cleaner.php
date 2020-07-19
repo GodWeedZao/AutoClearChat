@@ -57,7 +57,7 @@ class Cleaner extends PluginBase implements Listener {
             $Reason = $ReasonMenu[$data[1]];
             $this->getServer()->broadcastmessage(self::$resetChat);
             $Config = $this->getConfig();
-            if ($Config->get("Send-Cleared-Message-Handly") === true) {
+            if ($Config->get("Send-Cleared-Message-manually") === true) {
                 $this->getServer()->broadcastmessage(self::$Reason . "              " . "§c!§5-§d=§5(§4C§chat §aWas Cleared§5)§d=§5-§c!\n" . "              §2Cleared By: §3" . $player->getName() . "\n              " . "§l§2Reason: §b" . $Reason . "\n§a-§2=§a-§2=§a-§2=§a-§2=§a-§2=§a-§2=§a-§2=§a-§2=§a-§2=§a-§2=§a-§2=§a-§2=§a-§2=§a-§2=§a-§2=§a-§2=§a-");
             }
 });
